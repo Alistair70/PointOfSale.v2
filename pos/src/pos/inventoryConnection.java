@@ -11,7 +11,7 @@ import java.sql.Statement;
 
 public class inventoryConnection
 {
-    public static Connection getConnection() throws Exception{
+    public static Connection getConnection() throws Exception{                  // Connects to the database, in this case on local machine 
         try
         {
             String driver = "com.mysql.cj.jdbc.Driver";
@@ -26,8 +26,8 @@ public class inventoryConnection
         return null;
     }
     
-        public static String[] getProd(String id)
-        {
+        public static String[] getProd(String id)                               // Accesses the databse and obtains the prodcut information of the item with the
+        {                                                                       // given barcode.
         String[] prod = new String[4];
             try
             {
@@ -48,7 +48,7 @@ public class inventoryConnection
         return prod;
         }
         
-        public static void executeQuery(String q)
+        public static void executeQuery(String q)                               // Executes the query to the databse.
         {
             try
             {
@@ -58,28 +58,8 @@ public class inventoryConnection
             }catch(Exception e){System.out.println(e);}
         finally{System.out.println("Query execution complete");}
         } 
-        
-        public static int count()
-        {
-        int rows = 0; 
 
-            {
-            try{
-                Connection con = getConnection();
-
-                Statement stmt = con.createStatement();
-
-                ResultSet rs = stmt.executeQuery("Select count(*) from salesRecord");
-                rs.next();
-                rows = rs.getInt(1);
-                System.out.println("rows1: "+ rows);
-            }catch(Exception e){System.out.println(e);}
-            finally{System.out.println("Count Rows works");}
-            }  
-        return rows;
-        }
-        
-        public static String[] getCols()
+        public static String[] getCols()                                        // Returns all the unique categories of which all products fall under.
         {   
             int colCount = 0;
             ResultSetMetaData md = null;

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pos;
 
 import java.awt.BorderLayout;
@@ -39,10 +34,8 @@ public class Pos {
     
     public static SerialPort comPort;
     
-    public static void main(String[] args) throws IOException {   
-        
-        
-                
+    public static void main(String[] args) throws IOException 
+    {           
         createUI();
     }
     
@@ -70,8 +63,6 @@ public class Pos {
         
         JPanel checkout = new JPanel();
         JPanel superCheckout = new JPanel();
-        
-        
         
         JPanel optionsPanel = new JPanel();        
         JPanel total = new JPanel();
@@ -134,7 +125,7 @@ public class Pos {
             String bcode = "";
             @Override
             public void keyTyped(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                
             }
 
             @Override
@@ -174,8 +165,8 @@ public class Pos {
 
             @Override
             public void keyReleased(KeyEvent e) {
-                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
+            
         });        
         
         addItem.addActionListener( new ActionListener() // Add Function
@@ -203,12 +194,10 @@ public class Pos {
                     public void keyTyped(KeyEvent e) {
                         char c = e.getKeyChar();
                         if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
-                            e.consume();  // if it's not a number, ignore the event
+                            e.consume();  
                         }
                      }
                 });
-                
-                
                 
                 JButton confirm = new JButton("Add Item");
                                                 
@@ -236,7 +225,7 @@ public class Pos {
                     String bcode = "";
                     @Override
                     public void keyTyped(KeyEvent e) {
-                        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        
                     }
 
                     @Override
@@ -255,11 +244,9 @@ public class Pos {
 
                     @Override
                     public void keyReleased(KeyEvent e) {
-                        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        
                     }
-                });
-                
-                
+                });        
                 
                 confirm.addActionListener( new ActionListener() 
                 {
@@ -277,14 +264,13 @@ public class Pos {
                     itemNameIn.setText("");
                     priceIn.setText("");
                     
-                    barcodeIn.requestFocus();
-                    //addFrame.hide();
+                    barcodeIn.requestFocus();                    
                     }
                 });       
             }
         }); 
         
-        editItem.addActionListener( new ActionListener() // Add Function
+        editItem.addActionListener( new ActionListener() 
         {
             @Override
             public void actionPerformed(ActionEvent e) 
@@ -321,16 +307,15 @@ public class Pos {
                     public void keyTyped(KeyEvent e) {
                         char c = e.getKeyChar();
                         if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
-                            e.consume();  // if it's not a number, ignore the event
+                            e.consume();  
                         }
                      }
                 });
                
                 infoPanel.setLayout(new GridLayout(0, 3));
                 barcodePanel.setLayout(new GridLayout(0,1));
-                executable.setLayout(new GridLayout(0,2));
+                executable.setLayout(new GridLayout(0,2));                
                 
-                //barcodePanel.add(barcodeIn);
                 infoPanel.add(blank);
                 infoPanel.add(currInfo);
                 infoPanel.add(newValues);
@@ -362,7 +347,7 @@ public class Pos {
                     String bcode = "";
                     @Override
                     public void keyTyped(KeyEvent e) {
-                        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        
                     }
 
                     @Override
@@ -386,7 +371,7 @@ public class Pos {
 
                     @Override
                     public void keyReleased(KeyEvent e) {
-                        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        
                     }
                 });                 
                 
@@ -573,7 +558,6 @@ public class Pos {
                         refundFrame.addKeyListener(new KeyListener(){
                             
                             String barcode = "";
-                            //System.out.println(barcode);
                             
                             @Override
                             public void keyTyped(KeyEvent e) {
@@ -616,7 +600,7 @@ public class Pos {
                             }
                             @Override
                             public void keyReleased(KeyEvent e) {
-                               //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                               
                             }
                         });
                     }
@@ -663,7 +647,7 @@ public class Pos {
                                         public void keyTyped(KeyEvent e) {
                                             char c = e.getKeyChar();
                                             if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
-                                                e.consume();  // if it's not a number, ignore the event
+                                                e.consume();  
                                             }
                                          }
                                     });
@@ -704,7 +688,7 @@ public class Pos {
                             }
                             @Override
                             public void keyReleased(KeyEvent e) {
-                               //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                               
                             }
                         });
                         
@@ -743,7 +727,7 @@ public class Pos {
                     public void keyTyped(KeyEvent e) {
                         char c = e.getKeyChar();
                         if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE)) {
-                            e.consume();  // if it's not a number, ignore the event
+                            e.consume();  
                         }
                      }
                 });
@@ -874,8 +858,7 @@ public class Pos {
         {
             @Override
             public void actionPerformed(ActionEvent e) 
-            {
-                                   
+            {                                   
                 openSesame();
             }
         });
